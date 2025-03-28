@@ -1,0 +1,88 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 2rem;
+  background-color: rgb(135, 224, 239);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 1px black;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main h2 {
+  text-align: center;
+}
+
+.main p {
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.main label {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.main input {
+  padding: 5px;
+  margin-bottom: 1rem;
+  height: 20px;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+.main input:focus {
+  border: 1px solid blue;
+  box-shadow: 0px 0px 4px 1px blue;
+}
+
+.main input::placeholder {
+  font-style: italic;
+}
+
+.main #submitEl,
+#resetEl {
+  width: 5rem;
+  padding: 5px;
+  margin: 1rem auto;
+  color: white;
+  background-color: brown;
+  border-radius: 5px;
+}
+
+.results {
+  border: 2px solid rgb(40, 106, 106);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.results h4 {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.results #resultEl {
+  display: block;
+  margin: 1rem;
+  font-size: 2rem;
+  color: rgb(219, 74, 74);
+}
+
+.hidden {
+  display: none;
+}
