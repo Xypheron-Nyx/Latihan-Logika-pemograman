@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roman Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Konversi Angka ke Romawi</h2>
+      <label for="num">Masukkan Angka : </label>
+      <input id="num" inputmode="numeric" type="text" placeholder="Maksimal 4 digit" />
+      <button id="submit">Convert</button>
+      <div class="converter hidden">
+        <hr />
+        <p>Hasil Converter</p>
+        <p id="resultEl"></p>
+        <button id="resetEl">Reset</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

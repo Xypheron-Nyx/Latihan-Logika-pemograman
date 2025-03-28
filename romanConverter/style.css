@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: aquamarine;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  margin: 200px auto;
+  padding: 20px;
+  background-color: rgb(63, 211, 211);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 30px 0px;
+  text-decoration: underline;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+#num {
+  border-radius: 8px;
+  border: 2px solid #007bff; /* Warna biru biar lebih keren */
+  padding: 8px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#num:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Efek glow */
+  outline: none;
+}
+
+#submit {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: aqua;
+  border: 2px solid blue;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+hr {
+  height: 3px; /* Ketebalan garis */
+  background-color: black; /* Warna biru */
+  border: none;
+  margin-bottom: 20px;
+}
+
+.converter p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#resultEl {
+  text-align: center;
+  font-weight: bold;
+}
+
+#resetEl {
+  display: block;
+  width: 6rem;
+  margin: auto;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
