@@ -21,9 +21,8 @@ submitEl.addEventListener("click", function () {
     inputEl.value = "";
     return;
   } else {
-    reverseArray = inputEl.value.split("").reverse().join("");
     conResult.classList.remove("hidden");
-    resultEl.textContent = reverseArray;
+    resultEl.textContent = inputEl.value.split(" ").reverse().join(" ");
     submitEl.classList.add("hidden");
   }
 });
