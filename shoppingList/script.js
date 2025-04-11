@@ -3,7 +3,7 @@ const barangEl = document.getElementById("namaBarangEl");
 const jumlahEl = document.getElementById("jumlahEl");
 const hargaEl = document.getElementById("hargaEl");
 const kategoriEl = document.getElementById("kategoriEl");
-const types = document.querySelectorAll("#types");
+const types = document.querySelectorAll(".types-item");
 const submit = document.getElementById("submit");
 const rowCard = document.getElementById("rowCard");
 const message = document.getElementById("messageEl");
@@ -37,7 +37,9 @@ submit.addEventListener("click", function () {
     cardEdit.querySelector(".card-title span").textContent = barangEl.value;
     cardEdit.querySelector(".jumlahCard span").textContent = jumlahEl.value;
     cardEdit.querySelector(".hargaCard span").textContent = hargaEl.value;
-    cardEdit.querySelector(".typeCard span").textContent = typeProduct;
+    cardEdit.querySelector(".typeCard span").textContent = typeProduct || "Tidak dipilih";
+    typeProduct = "";
+    cardEdit = null;
   } else {
     const card = document.createElement("div");
     card.classList.add("col-sm-6", "mb-3", "col-md-4");
@@ -47,10 +49,10 @@ submit.addEventListener("click", function () {
               <h5 class="card-title">Nama Barang: <span class="fw-bold">${barangEl.value}</span></h5>
               <p class="card-text jumlahCard">Jumlah: <span class="fw-bold">${jumlahEl.value}</span></p>
               <p class="card-text hargaCard">Harga: <span class="fw-bold">${hargaEl.value}</span></p>
-              <p class="card-text typeCard">Kategori: <span class="fw-bold">${typeProduct}</span></p>
+              <p class="card-text typeCard">Kategori: <span class="fw-bold">${typeProduct || "Tidak dipilih"}</span></p>
                 <div class="d-flex gap-2">
                   <button id="editEl" type="button" class="btn btn-primary btn-sm w-50">Edit</button>
-                  <button id="delateEl" type="button" class="btn btn-danger btn-sm w-50">Hapus</button>
+                  <button id="deleteEl" type="button" class="btn btn-danger btn-sm w-50">Hapus</button>
                 </div>
               </div>
             </div>`;
@@ -60,11 +62,8 @@ submit.addEventListener("click", function () {
   barangEl.value = "";
   hargaEl.value = "";
   jumlahEl.value = "";
-  if (typeProduct == "") {
-    kategoriEl.textContent = "kategori Barang";
-  } else {
-    kategoriEl.textContent = typeProduct;
-  }
+  kategoriEl.textContent = "kategori Barang";
+  barangEl.focus();
 });
 
 document.addEventListener("click", function (e) {
@@ -81,7 +80,7 @@ document.addEventListener("click", function (e) {
       typeProduct = cardEdit.querySelector(".typeCard span").textContent;
     }
   }
-  if (e.target.id === "delateEl") {
+  if (e.target.id === "deleteEl") {
     card.remove();
   }
 });
