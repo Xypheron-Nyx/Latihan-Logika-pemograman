@@ -7,26 +7,29 @@ const resetEl = document.getElementById("resetEl");
 // regex
 const regex = /^[0-9]{1,4}$/;
 
-// result
-let result;
-
 input.addEventListener("input", function () {
   this.value = this.value.replace(/\D/g, ""); // Hapus karakter selain angka
 });
 
 submit.addEventListener("click", function () {
-  if (input.value == "") {
+  const num = parseInt(input.value); // ubah ke number
+
+  if (input.value === "") {
     alert("Tidak boleh kosong");
+    return;
+  } else if (num < 1 || num > 3999) {
+    alert("Angka harus antara 1 sampai 3999");
+    return;
   } else {
     converter.classList.remove("hidden");
-    toRoman(input.value);
-    resultEl.textContent = result;
+    resultEl.textContent = toRoman(num);
   }
 });
 
 resetEl.addEventListener("click", function () {
-  converter.classList.add("hidden");
   input.value = "";
+  converter.classList.add("hidden");
+  resultEl.textContent = "";
 });
 
 function toRoman(num) {
@@ -46,7 +49,7 @@ function toRoman(num) {
     { value: 1, symbol: "I" },
   ];
 
-  result = "";
+  let result = "";
 
   for (let i = 0; i < romanNumerals.length; i++) {
     while (num >= romanNumerals[i].value) {
