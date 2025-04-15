@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="min-h-screen flex justify-center items-center bg-slate-300">
+      <div class="w-full max-w-sm sm:max-w-lg md:max-w-2xl bg-sky-200 p-5 mx-auto rounded-lg shadow-2xl">
+        <h2 class="text-center font-medium text-2xl mb-10">Text To Speech</h2>
+        <form action="" class="flex flex-col">
+          <label for="inputTeks" class="text-lg">Masukkan Teks :</label>
+          <textarea name="textArea" id="inputTeks" placeholder="Masukkan teks" class="border p-2"></textarea>
+        </form>
+        <label for="myRange">Kecepatan</label>
+        <div class="slidecontainer flex gap-4">
+          <input type="range" min="0.5" max="2" value="1" class="slider" step="0.5" id="myRange" />
+          <p class="progressSlider">1</p>
+        </div>
+        <div class="flex gap-4 mt-4">
+          <button id="buttonAction" class="play bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 cursor-pointer">Play</button>
+          <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 stop hidden cursor-pointer">Stop</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
