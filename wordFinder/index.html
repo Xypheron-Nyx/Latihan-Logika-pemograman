@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .font-poligin {
+        font-family: "Pangolin", cursive;
+      }
+    </style>
+  </head>
+  <body class="font-poligin">
+    <div class="container min-h-screen w-96 flex flex-col justify-center items-center mx-auto">
+      <h2 class="text-center mt-20 text-4xl text-cyan-600 font-semibold mb-6">Word Finder :</h2>
+      <p class="text-xl mb-5">Mencari kata yang dimasukkan user</p>
+      <div class="containerInput border p-10 mb-10 rounded shadow-2xl">
+        <label for="findEl" class="block mb-2">Cari Kata :</label>
+        <input type="text" id="findEl" class="border focus:border-blue-500 p-3" />
+      </div>
+      <div class="teks border p-5 mb-52">
+        <p id="teksEl" class="text-justify">
+          Hidup ini seperti buku tebal yang kita tulis setiap harinya. Ada halaman-halaman yang penuh tawa, ada juga yang dipenuhi air mata. Kadang kita ingin membalik halaman dengan cepat, berharap bisa sampai ke bagian yang bahagia, tapi
+          kenyataannya setiap halaman punya cerita sendiri yang harus dijalani. Kita belajar dari jatuh, belajar dari kecewa, dan belajar juga dari kebahagiaan kecil yang kadang tak kita sadari. Setiap pagi adalah awal baru. Langit yang
+          biru, udara segar, secangkir kopi, atau suara burung di kejauhan, hal-hal sederhana itu sebenarnya cukup untuk membuat hati tenang, asal kita mau berhenti sejenak dan menikmatinya. Waktu berjalan cepat, tapi momen-momen kecil
+          itulah yang nantinya akan kita rindukan. Kita tak harus selalu menjadi sempurna, tak harus selalu kuat. Ada kalanya kita boleh lelah, berhenti sebentar, lalu bangkit lagi. Hidup bukan tentang siapa yang paling cepat, tapi siapa
+          yang paling bisa menikmati prosesnya. Kita tak bisa mengulang waktu, tapi kita bisa menciptakan kenangan-kenangan baru. Kadang cukup duduk di tepi jalan, melihat orang-orang berlalu-lalang, atau mendengarkan lagu favorit sambil
+          memejamkan mata. Hidup itu sederhana, asal kita tidak terlalu rumit memikirkannya.
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
