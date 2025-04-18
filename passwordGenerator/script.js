@@ -22,17 +22,18 @@ let hasilGenerate = [];
 tombol.addEventListener("click", function () {
   hasilGenerate = [];
   hasil.classList.remove("hidden");
+  hasil.textContent = "";
+  karakterDipilih = [];
+
+  if (karakterDipilih.length === 0) {
+    hasil.textContent = "Pilih dulu opsi karakter!";
+    return;
+  }
 
   // ambil nilai checkBox
   for (let i = 0; i < opsi.length; i++) {
     if (opsi[i].checked) {
       karakterDipilih = karakterDipilih.concat(karakterPassword[opsi[i].id]);
-    }
-
-    if (karakterDipilih.length === 0) {
-      hasil.innerHTML = "Pilih dulu opsi karakter!";
-
-      return;
     }
   }
 
@@ -41,6 +42,4 @@ tombol.addEventListener("click", function () {
     hasilGenerate.push(karakterDipilih[randomKarakter]);
   }
   hasil.textContent = hasilGenerate.join("");
-
-  karakterDipilih = [];
 });
