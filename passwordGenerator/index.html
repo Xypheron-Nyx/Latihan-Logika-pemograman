@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="judul">Generate Password</h1>
+
+      <div class="opsi-karakter">
+        <label><input type="checkbox" id="hurufKecil" class="opsi" value="lowercase" checked /> Huruf Kecil</label>
+        <label><input type="checkbox" id="hurufBesar" class="opsi" value="uppercase" checked /> Huruf Besar</label>
+        <label><input type="checkbox" id="angka" class="opsi" value="number" checked /> Angka</label>
+        <label><input type="checkbox" id="simbol" class="opsi" value="symbol" checked /> Simbol</label>
+      </div>
+
+      <button class="tombol">Generate</button>
+      <p class="hasil hidden">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
