@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Counter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Change Counter</h1>
+      <div class="input">
+        <div class="hargaBarang">
+          <p class="hargaJudul">Harga Barang</p>
+          <div class="inputHarga">
+            <span>Rp.</span>
+            <input type="text" id="hargaBarang" maxlength="7" />
+          </div>
+        </div>
+        <div class="uangBayar">
+          <p class="hargaJudul">Uang Pembayaran</p>
+          <div class="inputHarga">
+            <span>Rp.</span>
+            <input type="text" id="uangBayar" maxlength="7" />
+          </div>
+        </div>
+      </div>
+      <button class="btnHitung">Hitung</button>
+      <p class="pesan hidden">Pesan</p>
+      <div class="hasil hidden">
+        <h3>kembalian</h3>
+        <p class="kembalian"></p>
+        <div class="pecahanUang" id="pecahanUang"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

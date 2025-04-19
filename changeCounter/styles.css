@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Averia Gruesa Libre", system-ui;
+}
+
+/* Hilangkan spinner di Webkit (Chrome, Edge, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hilangkan spinner di Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  max-width: 600px;
+  width: 500px;
+  min-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgb(197, 215, 197);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 2px rgb(126, 147, 123);
+}
+
+.container h1 {
+  padding-bottom: 10px;
+  text-align: center;
+  color: rgb(93, 209, 105);
+  border-bottom: 2px solid rgb(80, 110, 65);
+}
+
+.container .input {
+  margin-bottom: 2.1rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.container .hargaJudul {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.container input {
+  padding: 5px;
+}
+
+.container .btnHitung {
+  padding: 8px;
+  width: 10rem;
+  display: block;
+  margin: 0 auto 20px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: 1px solid rgb(42, 147, 112);
+  cursor: pointer;
+}
+
+.pesan {
+  text-align: center;
+  font-size: 1.5rem;
+  color: red;
+}
+
+.container .btnHitung:hover {
+  color: white;
+  background-color: rgb(72, 164, 133);
+}
+
+.container .hasil h3 {
+  padding-top: 1rem;
+  border-top: 1px solid black;
+  text-align: center;
+}
+
+.container .hasil p {
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.container .hasil ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container .hasil ul li {
+  font-size: 1.5rem;
+}
+
+.container .pecahanUang {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
