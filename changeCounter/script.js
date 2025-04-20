@@ -85,7 +85,8 @@ function pecahanUang() {
     }
   }
   let resultString = "";
-  for (let key in result) {
+  let keys = Object.keys(result).sort((a, b) => b - a); // urutkan dari besar ke kecil
+  for (let key of keys) {
     resultString += `Rp.${key} x ${result[key]}<br>`;
   }
 
