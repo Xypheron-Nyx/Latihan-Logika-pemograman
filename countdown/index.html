@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Countdown Tanggal</h1>
+      <div class="input">
+        <p>Masukkan Tanggal :</p>
+        <input type="date" id="inputEl" />
+        <button id="submit">Hitung</button>
+      </div>
+      <p class="pesan hidden">HHHHH</p>
+      <div class="resultContainer">
+        <table class="tableCountdown">
+          <tr class="tanda">
+            <th>Hari</th>
+            <th>Jam</th>
+            <th>Menit</th>
+            <th>Detik</th>
+          </tr>
+          <tr id="countdown">
+            <td>00</td>
+            <td>00</td>
+            <td>00</td>
+            <td>00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
