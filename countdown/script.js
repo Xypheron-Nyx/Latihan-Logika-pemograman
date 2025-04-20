@@ -13,30 +13,38 @@ const displayUIEl = document.getElementById("countdown");
 // variabel hari,jam,menit,detik
 let timer;
 let isRunning = false;
-let hari, jam, menit, detik;
+let hari = 0,
+  jam = 0,
+  menit = 0,
+  detik = 0;
 
 submit.addEventListener("click", function () {
   pesan.classList.add("hidden");
 
   // ambil waktu yang dipilih user dan waktu sekarang
-  let timeSet = new Date(dateEl.value).getTime();
   let timeNow = new Date().getTime();
+  let timeSet = new Date(dateEl.value).getTime();
 
   // cek format
-  pesan.innerHTML = cekFormat(timeSet, timeNow);
-
-  hitungMundur(timeSet, timeNow);
+  if (cekFormat(timeSet, timeNow)) {
+    hitungMundur(timeSet, timeNow);
+  }
 });
 
 const cekFormat = (timeSet, timeNow) => {
-  if (isNaN(timeSet)) {
+  if (!dateEl.value) {
+    // Cek jika input kosong
     pesan.classList.remove("hidden");
-    return "Masukkan Tanggal";
+    pesan.innerHTML = "Masukkan Tanggal";
+    return false;
   }
   if (timeNow >= timeSet) {
     pesan.classList.remove("hidden");
-    return "Waktu yang anda pilih telah berlalu";
+    pesan.innerHTML = "Waktu yang anda pilih telah berlalu";
+    return false;
   }
+
+  return true;
 };
 
 const hitungMundur = (timeSet, timeNow) => {
@@ -44,19 +52,19 @@ const hitungMundur = (timeSet, timeNow) => {
     isRunning = true;
     timer = setInterval(function () {
       let sisa;
-      // pengurangan waktu
 
       // update waktu
       timeNow = new Date().getTime();
 
+      // pengurangan waktu
       let sisaWaktu = timeSet - timeNow;
 
       // jadikan detik
       let totalDetik = Math.floor(sisaWaktu / 1000);
 
       // Menghitung hari, jam, menit, detik
-      hari = Math.floor(totalDetik / (60 * 60 * 24)); // hari
-      sisa = totalDetik % (60 * 60 * 24); // sisa hari
+      hari = Math.floor(totalDetik / 86400); // hari
+      sisa = totalDetik % 86400; // sisa hari
 
       jam = Math.floor(sisa / 3600); // jam
       sisa = sisa % 3600; // sisa jam
@@ -64,7 +72,7 @@ const hitungMundur = (timeSet, timeNow) => {
       menit = Math.floor(sisa / 60); // sisa menit
       sisa = sisa % 60; // sisa menit
 
-      detik = sisa;
+      detik = sisa; // sisa detik
 
       // Jika waktu sudah habis
       if (sisaWaktu <= 0) {
