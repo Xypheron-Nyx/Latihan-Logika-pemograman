@@ -10,6 +10,12 @@ const pesan = document.querySelector(".pesan");
 // element ui
 const displayUIEl = document.getElementById("countdown");
 
+// resultContainer
+const resultContainer = document.querySelector(".resultContainer");
+
+// reset
+const reset = document.getElementById("reset");
+
 // variabel hari,jam,menit,detik
 let timer;
 let isRunning = false;
@@ -27,8 +33,22 @@ submit.addEventListener("click", function () {
 
   // cek format
   if (cekFormat(timeSet, timeNow)) {
+    resultContainer.classList.remove("hidden");
     hitungMundur(timeSet, timeNow);
   }
+});
+
+reset.addEventListener("click", function () {
+  resultContainer.classList.add("hidden");
+  pesan.classList.add("hidden");
+  pesan.innerHTML = "";
+  clearInterval(timer);
+  dateEl.value = "";
+  isRunning = false;
+  hari = 0;
+  jam = 0;
+  menit = 0;
+  detik = 0;
 });
 
 const cekFormat = (timeSet, timeNow) => {
@@ -51,13 +71,21 @@ const hitungMundur = (timeSet, timeNow) => {
   if (!isRunning) {
     isRunning = true;
     timer = setInterval(function () {
-      let sisa;
-
       // update waktu
       timeNow = new Date().getTime();
+      let sisa;
 
       // pengurangan waktu
       let sisaWaktu = timeSet - timeNow;
+
+      // Jika waktu sudah habis
+      if (sisaWaktu < 0) {
+        clearInterval(timer); // Stop interval
+        isRunning = false; // Reset isRunning
+        pesan.innerHTML = "Waktu telah habis!";
+        pesan.classList.remove("hidden");
+        return;
+      }
 
       // jadikan detik
       let totalDetik = Math.floor(sisaWaktu / 1000);
@@ -73,14 +101,6 @@ const hitungMundur = (timeSet, timeNow) => {
       sisa = sisa % 60; // sisa menit
 
       detik = sisa; // sisa detik
-
-      // Jika waktu sudah habis
-      if (sisaWaktu <= 0) {
-        clearInterval(timer); // Stop interval
-        isRunning = false; // Reset isRunning
-        pesan.innerHTML = "Waktu telah habis!";
-        pesan.classList.remove("hidden");
-      }
 
       displayUI();
     }, 1000);

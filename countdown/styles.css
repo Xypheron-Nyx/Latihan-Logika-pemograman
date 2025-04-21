@@ -57,16 +57,29 @@ body {
   display: flex;
   margin-top: 60px;
   justify-content: center;
+  flex-direction: column;
 }
 
 td,
 th {
+  text-align: center;
   padding: 10px;
 }
 
 .resultContainer #countdown {
- font-size: 2rem;
-  background-color: yellowgreen;
+  font-size: 2rem;
+}
+
+#reset {
+  width: 150px;
+  display: block;
+  margin: 20px auto;
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgb(239, 92, 35);
+  color: white;
+  border: 1px dotted black;
+  border-radius: 10px;
 }
 
 .hidden {
