@@ -1,7 +1,7 @@
 window.onload = function () {
-  let playerEl = document.querySelector(".player");
-  let row = parseInt(playerEl.getAttribute("data-row"));
-  let col = parseInt(playerEl.getAttribute("data-col"));
+  let row = 0;
+  let col = 0;
+  let playerEl = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
   const resetEl = document.getElementById("reset");
 
   window.addEventListener("keydown", karakterGerak);
@@ -19,10 +19,6 @@ window.onload = function () {
 
     // Update posisi di DOM
     playerEl = document.querySelector(`[data-row="${row}"][data-col="${col}"]`); // Ambil elemen berdasarkan data-row dan data-col
-
-    // Update atribut data
-    playerEl.setAttribute("data-row", row);
-    playerEl.setAttribute("data-col", col);
 
     // Reset warna
     playerEl.classList.remove("bg-white"); // Pastikan menghapus bg-white jika ada
