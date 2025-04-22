@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="container flex justify-center mx-auto mt-40">
+      <div class="grid grid-cols-5 gap-1 w-max p-2 bg-black">
+        <!-- Baris 0 -->
+        <div class="gridMaze w-10 h-10 bg-blue-500 player" data-row="0" data-col="0"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="0" data-col="1"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="0" data-col="2"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="0" data-col="3"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="0" data-col="4"></div>
+
+        <!-- Baris 1 -->
+        <div class="gridMaze w-10 h-10 bg-white" data-row="1" data-col="0"></div>
+        <div class="gridMaze w-10 h-10 bg-gray-400" data-row="1" data-col="1"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="1" data-col="2"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="1" data-col="3"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="1" data-col="4"></div>
+
+        <!-- Baris 2 -->
+        <div class="gridMaze w-10 h-10 bg-white" data-row="2" data-col="0"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="2" data-col="1"></div>
+        <div class="gridMaze w-10 h-10 bg-gray-400" data-row="2" data-col="2"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="2" data-col="3"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="2" data-col="4"></div>
+
+        <!-- Baris 3 -->
+        <div class="gridMaze w-10 h-10 bg-white" data-row="3" data-col="0"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="3" data-col="1"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="3" data-col="2"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="3" data-col="3"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="3" data-col="4"></div>
+
+        <!-- Baris 4 -->
+        <div class="gridMaze w-10 h-10 bg-white" data-row="4" data-col="0"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="4" data-col="1"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="4" data-col="2"></div>
+        <div class="gridMaze w-10 h-10 bg-white" data-row="4" data-col="3"></div>
+        <div class="gridMaze w-10 h-10 bg-green-500" data-row="4" data-col="4"></div>
+      </div>
+    </div>
+    <div id="reset" class="hidden">
+      <button class="block mx-auto mt-6 bg-red-500 p-2 w-28 rounded text-white hover:bg-red-800 cursor-pointer">Reset</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
